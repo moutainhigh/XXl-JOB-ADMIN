@@ -99,6 +99,16 @@
 				<docker.EntryPoint>["java", "-jar","-Duser.timezone=GMT+8","-Dspring.profiles.active=dev","/${project.build.finalName}.jar"]</docker.EntryPoint>
 			</properties>
 			<!--    默认激活    -->
+
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<package.environment>prod</package.environment>
+				<docker.Host>https://47.94.18.231:2375</docker.Host>
+				<docker.EntryPoint>["java", "-jar","-Duser.timezone=GMT+8","-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]</docker.EntryPoint>
+			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
